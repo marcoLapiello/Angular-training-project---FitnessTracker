@@ -1,5 +1,8 @@
 @use '@angular/material' as mat;
 
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
 html {
   color-scheme: light;
   @include mat.theme((
@@ -11,6 +14,42 @@ html {
   
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+mat-toolbar {
+  gap: 16px;
+
+  @include mat.toolbar-overrides((
+    container-background-color: #005cbb,
+    container-text-color: white,
+  ));
+
+  mat-icon {
+    color: white;
+
+    &:hover {
+      color: lightgrey
+    }
+  }
+
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    list-style-type: none;
+
+    li {
+
+      &:hover {
+        cursor: pointer;
+        color: lightgrey;
+      }
+    }
+  }
+}
+
+mat-sidenav-container {
+  height: 100%;
+}
+
+
 

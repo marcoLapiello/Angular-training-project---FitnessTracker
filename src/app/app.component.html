@@ -1,1 +1,20 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="over" opened="false" position="start">
+        <p>Im the sidenav</p>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar role="heading">
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span routerLink="">Logo</span>
+            <ul>
+                <li routerLink='/signup'>Signup</li>
+                <li routerLink='/login'>Login</li>
+                <li routerLink='/training'>Training</li>
+            </ul>
+            
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

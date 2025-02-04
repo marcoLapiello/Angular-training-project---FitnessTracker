@@ -1,20 +1,9 @@
 <mat-sidenav-container>
     <mat-sidenav #sidenav mode="over" opened="false" position="start">
-        <p>Im the sidenav</p>
+        <app-sidenav (closeSidenav)="sidenav.toggle()"></app-sidenav>
     </mat-sidenav>
     <mat-sidenav-content>
-        <mat-toolbar role="heading">
-            <button mat-icon-button (click)="sidenav.toggle()">
-                <mat-icon>menu</mat-icon>
-            </button>
-            <span routerLink="">Logo</span>
-            <ul>
-                <li routerLink='/signup'>Signup</li>
-                <li routerLink='/login'>Login</li>
-                <li routerLink='/training'>Training</li>
-            </ul>
-            
-        </mat-toolbar>
+        <app-header (toggleSidenav)="sidenav.toggle()"></app-header>
         <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>

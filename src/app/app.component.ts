@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { RouterModule } from '@angular/router';
+import { RouterOutlet, RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import { HeaderComponent } from "./navigation/header/header.component";
+import { SidenavComponent } from "./navigation/sidenav/sidenav.component";
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MatButtonModule, MatIconModule, MatSidenavModule, MatToolbarModule, RouterModule],
+  imports: [RouterOutlet, MatButtonModule, MatSidenavModule, MatListModule, RouterModule, HeaderComponent, SidenavComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'fitness-tracker';
+  
 }

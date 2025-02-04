@@ -1,0 +1,19 @@
+<mat-toolbar role="heading">
+    @if (showBurgerMenu) {
+        <button mat-icon-button (click)="onToggleSidenav()">
+            <mat-icon>list</mat-icon>
+        </button>
+    }
+    
+    <span routerLink="">Logo</span>
+    @if (showToolbarLinks) {
+        <ul>
+            <li routerLink='/signup'>Signup</li>
+            <li routerLink='/login'>Login</li>
+            <li routerLink='/training'>Training</li>
+            <li>Logout</li>
+        </ul>
+    }
+    
+    
+</mat-toolbar>

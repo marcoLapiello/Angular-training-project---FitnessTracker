@@ -1,1 +1,11 @@
-<p>current-training works!</p>
+<section>
+  <div>
+    <h1>You can do it</h1>
+
+    <mat-progress-spinner mode="determinate" [value]="progress"></mat-progress-spinner>
+    <h3>{{ progress }}%</h3>
+    <button mat-flat-button type="submit" (click)="stopTraining()">
+      Stop
+    </button>
+  </div>
+</section>

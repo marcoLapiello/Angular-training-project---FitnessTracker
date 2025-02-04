@@ -1,0 +1,22 @@
+section {
+    // height: 100vh;
+    padding-top: 64px;
+    display: flex;
+    justify-content: center;
+
+    mat-card {
+        width: 550px;
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;    
+    }
+
+    
+}
+
+.fullWidth {
+    min-width: 100%;
+}

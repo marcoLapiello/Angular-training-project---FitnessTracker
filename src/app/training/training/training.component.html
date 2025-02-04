@@ -1,8 +1,14 @@
+@if (!isOngoingTraining) {
 <mat-tab-group>
   <mat-tab label="New Training">
-    <app-new-training></app-new-training>
+    <app-new-training
+      (startTraining)="isOngoingTraining = true"
+    ></app-new-training>
   </mat-tab>
   <mat-tab label="Past Trainings">
     <app-past-training></app-past-training>
   </mat-tab>
 </mat-tab-group>
+} @else if (isOngoingTraining) {
+  <app-current-training></app-current-training>
+}

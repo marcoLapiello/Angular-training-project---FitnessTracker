@@ -17,6 +17,11 @@ mat-toolbar {
         }
     }
 
+    span:hover {
+        cursor: pointer;
+        color: lightgrey;
+    }
+
     ul {
         width: 100%;
         display: flex;

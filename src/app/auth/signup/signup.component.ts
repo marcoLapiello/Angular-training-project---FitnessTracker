@@ -6,6 +6,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -14,15 +15,18 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
   styleUrl: './signup.component.scss'
 })
 export class SignupComponent {
-
   maxDate: Date;
 
-  constructor() {
+  constructor(private authService: AuthService) {
     this.maxDate = new Date();
     this.maxDate.setFullYear(this.maxDate.getFullYear() - 18);
   }
 
   onSubmit(form: NgForm) {
-    console.log(form);
+    this.authService.registerUser({
+      email: form.value.email,
+      password: form.value.password
+    });
+    
   }
 }

@@ -7,10 +7,14 @@
     <span routerLink="">Logo</span>
     @if (showToolbarLinks) {
         <ul>
-            <li routerLink='/signup'>Signup</li>
-            <li routerLink='/login'>Login</li>
-            <li routerLink='/training'>Training</li>
-            <li>Logout</li>
+            @if(isAuthenticated){
+                <li routerLink='/training'>Training</li>
+                <li>Logout</li>
+            } @else {
+                <li routerLink='/signup'>Signup</li>
+                <li routerLink='/login'>Login</li>
+            }
+            
         </ul>
     }
 </mat-toolbar>

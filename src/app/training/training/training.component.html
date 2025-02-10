@@ -10,5 +10,5 @@
   </mat-tab>
 </mat-tab-group>
 } @else if (isOngoingTraining) {
-  <app-current-training></app-current-training>
+  <app-current-training (exitTraining)="isOngoingTraining = false"></app-current-training>
 }

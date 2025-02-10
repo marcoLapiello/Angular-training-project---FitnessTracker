@@ -11,5 +11,5 @@ import { CurrentTrainingComponent } from "../current-training/current-training.c
   styleUrl: './training.component.scss'
 })
 export class TrainingComponent {
-  isOngoingTraining = false;
+  isOngoingTraining!: boolean;
 }

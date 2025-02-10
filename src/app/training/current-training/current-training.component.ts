@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -12,12 +12,17 @@ import { StopTrainingDialogComponent } from './stop-training-dialog/stop-trainin
   styleUrl: './current-training.component.scss'
 })
 export class CurrentTrainingComponent {
+  @Output() exitTraining = new EventEmitter<void>();
   progress = 0;
   timer: any;
 
   constructor(private dialog: MatDialog) {}
 
   ngOnInit() {
+    this.startOrResumeTimer();
+  }
+
+  startOrResumeTimer() {
     this.timer = setInterval(() => {
       this.progress = this.progress + 5;
       if (this.progress >= 100) {
@@ -35,7 +40,11 @@ export class CurrentTrainingComponent {
     }); 
     
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
+      if (result) {
+        this.exitTraining.emit();
+      } else {
+        this.startOrResumeTimer();
+      }
     });
   }
 }

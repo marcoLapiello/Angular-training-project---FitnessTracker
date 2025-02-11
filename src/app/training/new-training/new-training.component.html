@@ -7,20 +7,18 @@
       <mat-form-field>
         <mat-label>Select Exercise</mat-label>
         <mat-select>
-          <mat-option value="Exercise">
-            Push-Ups
-          </mat-option>
-          <mat-option value="Exercise">
-            Squats
-          </mat-option>
-          <mat-option value="Exercise">
-            Pull-Ups
-          </mat-option>
+          @for (exercise of availableExercises; track $index) {
+            <mat-option value="Exercise">
+              {{ exercise.name }}
+            </mat-option>
+          }
         </mat-select>
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-flat-button type="submit" (click)="onStartTraining()">Start</button>
+      <button mat-flat-button type="submit" (click)="onStartTraining()">
+        Start
+      </button>
     </mat-card-actions>
   </mat-card>
 </section>

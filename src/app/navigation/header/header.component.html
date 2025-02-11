@@ -9,7 +9,7 @@
         <ul>
             @if(isAuthenticated){
                 <li routerLink='/training'>Training</li>
-                <li>Logout</li>
+                <li (click)="onLogout()">Logout</li>
             } @else {
                 <li routerLink='/signup'>Signup</li>
                 <li routerLink='/login'>Login</li>

@@ -49,6 +49,10 @@ export class HeaderComponent {
     this.toggleSidenav.emit();
   }
 
+  onLogout() {
+    this.authService.logout();
+  }
+
   ngOnDestroy() {
     this.authSubscription.unsubscribe();
   }
